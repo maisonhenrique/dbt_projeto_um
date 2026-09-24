@@ -1,0 +1,10 @@
+dbt_projeto_um:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: projeto-estudo-365617
+      dataset: "{{ env_var('DBT_DBNAME', 'projeto_um') }}"
+      threads: 4
+      keyfile: /home/mfonseca/.dbt/projeto-estudo-365617-cac4ce2ae905.json
